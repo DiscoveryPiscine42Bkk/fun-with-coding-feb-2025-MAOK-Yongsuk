@@ -9,61 +9,59 @@
 
 <body>
     <div>
-        <input id="left" />
-        <select id="operator">
+        <input id="firstNumber" />
+        <select id="mathOperator">
             <option value="+">+</option>
             <option value="-">-</option>
             <option value="*">*</option>
             <option value="/">/</option>
             <option value="%">%</option>
         </select>
-        <input id="right" />
+        <input id="secondNumber" />
         <button onclick="calculate()">Try me!</button>
     </div>
 
     <script>
         const calculate = () => {
-            const leftNum = parseInt(document.getElementById('left').value);
-            const rightNum = parseInt(document.getElementById('right').value);
-            const operator = document.getElementById('operator').value;
+            const firstValue = parseInt(document.getElementById('firstNumber').value);
+            const secondValue = parseInt(document.getElementById('secondNumber').value);
+            const selectedOperator = document.getElementById('mathOperator').value;
 
-            if (isNaN(leftNum) || isNaN(rightNum) || leftNum < 0 || rightNum < 0) {
+            if (isNaN(firstValue) || isNaN(secondValue) || firstValue < 0 || secondValue < 0) {
                 alert('Error :(');
                 return;
             }
 
-            if ((operator === '/' || operator === '%') && rightNum === 0) {
+            if ((selectedOperator === '/' || selectedOperator === '%') && secondValue === 0) {
                 alert("It's over 9000!");
                 return;
             }
 
-            let result;
-            switch (operator) {
+            let calculationResult;
+            switch (selectedOperator) {
                 case '+':
-                    result = leftNum + rightNum;
+                    calculationResult = firstValue + secondValue;
                     break;
                 case '-':
-                    result = leftNum - rightNum;
+                    calculationResult = firstValue - secondValue;
                     break;
                 case '*':
-                    result = leftNum * rightNum;
+                    calculationResult = firstValue * secondValue;
                     break;
                 case '/':
-                    result = leftNum / rightNum;
+                    calculationResult = firstValue / secondValue;
                     break;
                 case '%':
-                    result = leftNum % rightNum;
+                    calculationResult = firstValue % secondValue;
                     break;
                 default:
                     return;
             }
-            alert(result);
-            console.log(result);
+            alert(calculationResult);
+            console.log(calculationResult);
         }
 
-        setInterval(() => {
-            alert('Please, use me');
-        }, 30000);
+        setInterval(() => {alert('Please, use me');}, 30000);
     </script>
 </body>
 
