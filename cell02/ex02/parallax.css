@@ -1,0 +1,41 @@
+body {
+  margin: 0px !important;
+  background-color: #000;
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.first-image {
+  background-image: url("https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1msIHy.img");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  color: #fff;
+}
+
+.content {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin-top: 40vh;
+}
+
+.second-image {
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/18/17/00/mountain-ranges-1835815_640.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
