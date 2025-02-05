@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Balloon</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        box-sizing: border-box;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .balloon {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="balloon" />
+    </div>
+    <script>
+        $(document).ready(() => {
+            let curColor = 0;
+            const colors = ["red", "green", "blue"];
+            const balloon = $('.balloon');
+
+            const sizeIncrease = () => {
+                const balloonSize = balloon.width();
+                balloon.css({
+                    width: balloonSize + 10 + 'px',
+                    height: balloonSize + 10 + 'px'
+                });
+                curColor = (curColor + 1) % colors.length;
+                balloon.css('background-color', colors[curColor]);
+
+                if (balloon.width() > 420) {
+                    balloon.css({
+                        width: '200px',
+                        height: '200px'
+                    });
+                }
+            }
+
+            const sizeDecrease = () => {
+                if (balloon.width() > 200) {
+                    const ballonSize = balloon.width();
+                    balloon.css({
+                        width: ballonSize - 5 + 'px',
+                        height: ballonSize - 5 + 'px'
+                    });
+                }
+                curColor = (curColor - 1 + colors.length) % colors.length;
+                balloon.css('background-color', colors[curColor]);
+            }
+
+            balloon.on('click', sizeIncrease);
+            balloon.on('mouseleave', sizeDecrease);
+        });
+    </script>
+</body>
+
+</html>

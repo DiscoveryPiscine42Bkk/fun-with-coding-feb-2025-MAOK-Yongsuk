@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="background.css">
+    <title>Background</title>
+</head>
+
+<body>
+    <button onclick="randomColor()">Click me!</button>
+    <script>
+        const randomColor = () => {
+            const randomRed = Math.floor(Math.random() * 256);
+            const randomGreen = Math.floor(Math.random() * 256);
+            const randomBlue = Math.floor(Math.random() * 256);
+            const randomColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+            document.body.style.backgroundColor = randomColor;
+        };
+    </script>
+</body>
+
+</html>

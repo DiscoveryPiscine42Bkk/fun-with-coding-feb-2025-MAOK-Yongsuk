@@ -1,41 +1,46 @@
 body {
-  margin: 0px !important;
-  background-color: #000;
-}
-.container {
-  width: 100%;
-  height: 100%;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
 }
 
-.first-image {
-  background-image: url("https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1msIHy.img");
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.parallax {
+    opacity: 0.8;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
-h3 {
-  color: #fff;
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
 }
 
-.content {
-  width: 100%;
-  text-align: center;
-  color: #fff;
-  margin-top: 40vh;
+.black-block {
+    background-color: black;
+    padding: 64px;
+    height: 300px;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
-.second-image {
-  background-image: url("https://cdn.pixabay.com/photo/2016/11/18/17/00/mountain-ranges-1835815_640.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#img1 {
+    background-image: url("https://cdn.mos.cms.futurecdn.net/KgJ2GoxKFrnKo3pChxvJxN.jpg");
+    min-height: 100vh;
+    color: white;
+}
+
+#img2 {
+    background-image: url("https://a.storyblok.com/f/178900/920x518/fb8850f0cf/bocchi-the-rock.jpg/m/filters:quality(95)format(webp)");
+    min-height: 70vh;
+
 }

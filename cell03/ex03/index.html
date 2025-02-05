@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #ft_list {
+            margin-top: 20px;
+        }
+
+        #ft_list div {
+            background: red;
+            color: white;
+            padding: 8px;
+            margin: 4px;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 8px;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="newTask()">New</button>
+    <div id="ft_list"></div>
+    <script src="todo.js"></script>
+</body>
+
+</html>
