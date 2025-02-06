@@ -23,7 +23,7 @@ body {
 }
 
 .black-block {
-    background-color: black;
+    background-color: rgb(34, 0, 255);
     padding: 64px;
     height: 300px;
     color: white;
@@ -33,14 +33,18 @@ body {
     align-items: center;
 }
 
+.caption {
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+}
+
 #img1 {
-    background-image: url("https://cdn.mos.cms.futurecdn.net/KgJ2GoxKFrnKo3pChxvJxN.jpg");
+    background-image: url("https://fooocusai.com/wp-content/uploads/2024/05/ai-generated-pet-animal-8751092-1024x583.jpg");
     min-height: 100vh;
     color: white;
 }
 
 #img2 {
-    background-image: url("https://a.storyblok.com/f/178900/920x518/fb8850f0cf/bocchi-the-rock.jpg/m/filters:quality(95)format(webp)");
+    background-image: url("https://johneengle.com/wp-content/uploads/2023/08/ai-image-generator.jpg");
     min-height: 70vh;
-
 }
