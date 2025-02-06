@@ -23,7 +23,7 @@ body {
 }
 
 .black-block {
-    background-color: rgb(34, 0, 255);
+    background-color: rgb(0, 0, 0);
     padding: 64px;
     height: 300px;
     color: white;
