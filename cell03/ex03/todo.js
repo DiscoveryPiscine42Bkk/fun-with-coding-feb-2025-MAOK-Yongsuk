@@ -1,34 +1,34 @@
-const saveTasks = () => {
-  let tasks = [];
+const persistToDoList = () => {
+  let todoItems = [];
   document
     .querySelectorAll("#ft_list div")
-    .forEach((div) => (tasks = [div.textContent, ...tasks]));
-  document.cookie = `tasks=${JSON.stringify(tasks)}`;
+    .forEach((element) => (todoItems = [element.textContent, ...todoItems]));
+  document.cookie = `todoItems=${JSON.stringify(todoItems)}`;
 };
 
-const addTask = (text, save = true) => {
-  const taskDiv = document.createElement("div");
-  taskDiv.textContent = text;
-  taskDiv.addEventListener("click", () => {
+const createTodoItem = (content, shouldSave = true) => {
+  const todoElement = document.createElement("div");
+  todoElement.textContent = content;
+  todoElement.addEventListener("click", () => {
     if (confirm("Do you want to remove this task?")) {
-      taskDiv.remove();
-      saveTasks();
+      todoElement.remove();
+      persistToDoList();
     }
   });
-  const ftList = document.getElementById("ft_list");
-  ftList.prepend(taskDiv);
-  if (save) saveTasks();
+  const todoContainer = document.getElementById("ft_list");
+  todoContainer.prepend(todoElement);
+  if (shouldSave) persistToDoList();
 };
 
-const newTask = () => {
-  const task = prompt("Enter a new TO DO:");
-  if (task) addTask(task);
+const createNewTodoItem = () => {
+  const userInput = prompt("Enter a new TO DO:");
+  if (userInput) createTodoItem(userInput);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const [_key, saveTasks] = document.cookie.split("=");
-  if (saveTasks) {
-    const tasks = JSON.parse(saveTasks);
-    tasks.map((task) => addTask(task, false));
+  const [_cookieKey, savedTodoItems] = document.cookie.split("=");
+  if (savedTodoItems) {
+    const todoItems = JSON.parse(savedTodoItems);
+    todoItems.map((item) => createTodoItem(item, false));
   }
 });

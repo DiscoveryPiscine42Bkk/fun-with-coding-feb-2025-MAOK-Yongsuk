@@ -4,33 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>TO DO</title>
     <style>
         body {
             text-align: center;
         }
 
         #ft_list {
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         #ft_list div {
-            background: red;
+            background: skyblue;
             color: white;
-            padding: 8px;
-            margin: 4px;
+            padding: 10px;
+            margin: 5px;
             cursor: pointer;
         }
 
         button {
-            margin-top: 8px;
-            padding: 8px;
+            margin-top: 10px;
+            padding: 10px;
         }
     </style>
 </head>
 
 <body>
-    <button onclick="newTask()">New</button>
+    <button onclick="createNewTodoItem()">New</button>
     <div id="ft_list"></div>
     <script src="todo.js"></script>
 </body>
