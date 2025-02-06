@@ -12,7 +12,7 @@ body {
 
 /* กำหนดสไตล์ให้กับ container class */
 .container {
-    background: white; /* พื้นหลังสีขาว */
+    background: red; /* พื้นหลังสีขาว */
     padding: 2rem 2.5rem; /* ระยะห่างภายใน */
     border-radius: 16px; /* มุมโค้ง */
     box-shadow: /* เงาของกล่อง */
@@ -29,10 +29,9 @@ body {
 
 /* สไตล์สำหรับข้อความ label */
 .label-text {
-    display: block; /* แสดงผลแบบบล็อก */
     font-size: 1.1rem; /* ขนาดตัวอักษร */
     font-weight: 600; /* ความหนาตัวอักษร */
-    color: #2d3748; /* สีตัวอักษร */
+    color: white; /* สีตัวอักษร */
     margin-bottom: 0.75rem; /* ระยะห่างด้านล่าง */
     letter-spacing: 0.025em; /* ระยะห่างระหว่างตัวอักษร */
 }
@@ -42,7 +41,7 @@ body {
     padding: 0.75rem 1rem; /* ระยะห่างภายใน */
     border: 2px solid #e2e8f0; /* เส้นขอบ */
     background-color: white; /* พื้นหลังสีขาว */
-    border-radius: 10px; /* มุมโค้ง */
+    border-radius: 20px; /* มุมโค้ง */
     font-size: 1rem; /* ขนาดตัวอักษร */
     min-width: 220px; /* ความกว้างขั้นต่ำ */
     color: #4a5568; /* สีตัวอักษร */
