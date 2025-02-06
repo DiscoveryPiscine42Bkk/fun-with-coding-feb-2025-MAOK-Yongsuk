@@ -1,44 +1,54 @@
+/* กำหนดค่าพื้นฐานให้กับ body element */
 body {
-    box-sizing: border-box;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* รวมขอบและ padding เข้าไปในขนาดที่กำหนด */
+    min-height: 100vh; /* กำหนดความสูงขั้นต่ำให้เท่ากับความสูงของหน้าจอ */
+    margin: 0; /* ลบระยะขอบทั้งหมด */
+    display: flex; /* จัดการแสดงผลแบบ flexible box */
+    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    background: linear-gradient(135deg, #f6f9fc 0%, #e9ecef 100%); /* กำหนดพื้นหลังแบบไล่ระดับสี */
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; /* กำหนดรูปแบบตัวอักษร */
 }
 
-.dropdown {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+/* กำหนดสไตล์ให้กับ container class */
+.container {
+    background: white; /* พื้นหลังสีขาว */
+    padding: 2rem 2.5rem; /* ระยะห่างภายใน */
+    border-radius: 16px; /* มุมโค้ง */
+    box-shadow: /* เงาของกล่อง */
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(0); /* ตำแหน่งเริ่มต้น */
+    transition: all 0.2s ease; /* การเปลี่ยนแปลงแบบ animation */
 }
 
-label {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
+/* เมื่อ hover ที่ container */
+.container:hover {
+    transform: translateY(-2px); /* เลื่อนขึ้นด้านบน 2px เมื่อชี้เมาส์ */
 }
 
-select {
-    padding: 12px;
-    border: 2px solid transparent;
-    background-color: white;
-    border-radius: 8px;
-    font-size: 16px;
-    min-width: 180px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+/* สไตล์สำหรับข้อความ label */
+.label-text {
+    display: block; /* แสดงผลแบบบล็อก */
+    font-size: 1.1rem; /* ขนาดตัวอักษร */
+    font-weight: 600; /* ความหนาตัวอักษร */
+    color: #2d3748; /* สีตัวอักษร */
+    margin-bottom: 0.75rem; /* ระยะห่างด้านล่าง */
+    letter-spacing: 0.025em; /* ระยะห่างระหว่างตัวอักษร */
 }
 
-
-select:focus {
-    outline: none;
-    border: 2px solid #0070f3;
-    box-shadow: 0px 0px 10px rgba(0, 112, 243, 0.5);
+/* สไตล์สำหรับ dropdown menu */
+.menu-select {
+    padding: 0.75rem 1rem; /* ระยะห่างภายใน */
+    border: 2px solid #e2e8f0; /* เส้นขอบ */
+    background-color: white; /* พื้นหลังสีขาว */
+    border-radius: 10px; /* มุมโค้ง */
+    font-size: 1rem; /* ขนาดตัวอักษร */
+    min-width: 220px; /* ความกว้างขั้นต่ำ */
+    color: #4a5568; /* สีตัวอักษร */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นรูปมือชี้ */
+    transition: all 0.2s ease; /* การเปลี่ยนแปลงแบบ animation */
+    background-repeat: no-repeat; /* ไม่ทำซ้ำภาพพื้นหลัง */
+    background-position: right 1rem center; /* ตำแหน่งภาพพื้นหลัง */
+    background-size: 0.65rem auto; /* ขนาดภาพพื้นหลัง */
 }
-
