@@ -1,0 +1,406 @@
+/* Importing Oswald font from Google Fonts for consistent typography */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* Global Variables for consistent theming and responsive design
+ * --light-bg-color: Light background for containers
+ * --dark-bg-color: Primary color for headings and accents
+ * Responsive font sizes using clamp(min, preferred, max) 
+ */
+:root {
+    --header-bg-color: #333;
+    --light-bg-color: #FAEBEFFF;
+    --dark-bg-color: #333D79FF;
+    --title-font-size: clamp(15px, 2vw, 100px);
+    --name-font-size: clamp(35px, 5vw, 100px);
+    --others-font-size: clamp(15px, 1.5vw, 40px);
+}
+
+/* Base styles for clean layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", serif;
+}
+
+* {
+     box-sizing: border-box;
+ }
+
+/* Fixed header layout with shadow and high z-index for overlay */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    min-height: fit-content;
+    background-color: #333;
+    color: white;
+    z-index: 99999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+header h1 {
+    margin: 1%;
+    font-size: var(--title-font-size);
+    white-space: nowrap;
+}
+
+/* Main content layout with responsive max-width and margin for fixed header */
+main {
+    max-width: 1200px;
+    margin: 12vh auto 0; /* Add top margin to account for fixed header */
+    padding: 2rem;
+}
+
+/* Container styling with hover animation and shadow effects */
+.container {
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--light-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* Profile section styling */
+.bio-container {
+    /* Gradient background for visual interest */
+    background: linear-gradient(135deg, var(--light-bg-color) 0%, #fff 100%);
+}
+
+.profile-section {
+    /* Centered layout for profile elements */
+    text-align: center;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+/* Profile image with circular crop and hover animation */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    border: 5px solid var(--dark-bg-color);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+.bio {
+    font-size: var(--others-font-size);
+    color: var(--dark-bg-color);
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Contact badges with flex layout and subtle shadow */
+.bio-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.badge {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--others-font-size);
+    color: var(--dark-bg-color);
+}
+
+.badge i {
+    color: var(--dark-bg-color);
+}
+
+.summary-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(0,0,0,0.1);
+}
+
+.summary-section h3 {
+    color: var(--dark-bg-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.summary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.summary-main, .summary-focus {
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+.key-achievements {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.key-achievements h4 {
+    color: var(--dark-bg-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.key-achievements ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.key-achievements li {
+    padding: 0.5rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Skills section with responsive grid layout */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Skill cards with consistent styling and icon alignment */
+.skill-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    opacity: 1;
+}
+
+.skill-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill-card li {
+    margin: 0.8rem 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-card li img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.skill-card li i {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-bg-color);
+}
+
+.skill-card h3 {
+    color: var(--dark-bg-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Contact section with centered layout and gradient background */
+.contact-container {
+    background: linear-gradient(135deg, var(--light-bg-color) 0%, #fff 100%);
+    text-align: center;
+}
+
+.contact-container h2 {
+    color: var(--dark-bg-color);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-text {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Social media links with hover effects and brand colors */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 2.5rem;
+    color: var(--dark-bg-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    padding: 1rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.social-icon span {
+    font-size: 1rem;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+}
+
+/* Update social icon colors */
+.github:hover { 
+    color: #24292e; 
+    background: #f6f8fa;
+}
+.linkedin:hover { 
+    color: #0077b5; 
+    background: #e8f4f9;
+}
+.instagram:hover { 
+    color: #e4405f; 
+}
+.kaggle:hover { 
+    color: #20beff; 
+    background: #f0f9ff;
+}
+
+/* simple name style */
+.name {
+    font-size: var(--name-font-size);
+    color: var(--dark-bg-color);
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Add to existing styles */
+.contact-info {
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: var(--others-font-size);
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    color: var(--dark-bg-color);
+}
+
+.summary {
+    text-align: center;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 1.5rem auto;
+    color: #555;
+}
+
+.achievements-title {
+    margin-top: 3rem;
+    text-align: center;
+    color: var(--dark-bg-color);
+}
+
+/* Remove old achievements styling */
+.achievements-grid,
+.achievement-card,
+.visible {
+    display: none;
+}
+
+/* Experience cards with flex layout for dynamic content */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.experience-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    min-height: 200px;
+    /* Flexible column layout with space-between for content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+}
+
+.experience-card h3 {
+    color: var(--dark-bg-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.experience-card .role {
+    color: #666;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    font-style: italic;
+}
+
+.experience-card p {
+    color: #555;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.experience-card .highlight {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+}

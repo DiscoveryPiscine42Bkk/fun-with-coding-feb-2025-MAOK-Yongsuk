@@ -1,0 +1,88 @@
+/* importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/*========== Root/Body Section ==========*/
+:root {
+    --header-bg-color: #333;
+
+    --light-bg-color: #FAEBEFFF;
+    --dark-bg-color: #333D79FF;
+
+    /*font size               min   preferred max   */
+    --title-font-size:  clamp(30px, 2vw,      300px);
+    --name-font-size:   clamp(35px, 5vw,      400px);
+    --others-font-size: clamp(30px, 1.5vw,    300px);
+}
+body {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Oswald", serif;
+
+    background-color: black;
+}
+
+/*========== Header Section ==========*/
+header {
+    display: flex;
+    width: 100vw;
+
+    background-color: #333;
+    color: white;
+    z-index: 99999;
+}
+header h1 {
+    margin: 1%;
+    font-size: var(--title-font-size);
+}
+
+
+/*========== left-right Section ==========*/
+/* parent container */
+#main-container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* modify both sides */
+.cv-container {
+    width: 50%;
+    height: 100%;
+    padding: 2%;
+    transition: filter 0.3s;
+    box-sizing: border-box; 
+}
+.cv-container:hover {
+    cursor: pointer;
+    filter: brightness(0.5);
+}
+.cv-container .name {
+    font-size: var(--name-font-size);
+    font-weight: bold;
+}
+.cv-container .intra-handle{
+    font-size: var(--others-font-size);
+    margin: 0;
+}
+
+/* modify each side */
+#left-container { /*background-col and text-col switches places*/
+    background-color: var(--light-bg-color);
+    color: var(--dark-bg-color);
+}
+#right-container {
+    text-align: right;
+    background-color: var(--dark-bg-color);
+    color: var(--light-bg-color);
+}
+
+#left-container .intra-handle{
+    left: 10px;
+}
+#right-container .intra-handle{
+    right: 10px;
+}
